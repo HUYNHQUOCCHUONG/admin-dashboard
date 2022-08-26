@@ -1,0 +1,49 @@
+<div class="col-div-8">
+    <div class="box-8">
+      <div class="content-box">
+        <p>Danh sách dự án<span><a style="border-radius: 6px;
+          box-sizing: border-box;
+          color:  linear-gradient(135deg, #008aff, #86d472);;
+          display: block;
+          font-size: 1.4em;
+          font-weight: 600;
+          padding: 4px;
+          position: relative;
+          text-decoration: none;
+          z-index: 2;"routerLink="/duanthem">Nhập thêm</a></span></p>
+        <!-- <form class="d-flex" role="search" style="width:50%">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tk" [(ngModel)]="tukhoa" (keyup)="locDA()" >
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+        <br />
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Tên dự án</th>
+              <th>Ngày bắt đầu</th>
+              <th>Tiền</th>
+              <th>Leader</th>
+              <th>Trạng Thái</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let da of listDuAn; let i= index">
+            <td> {{i+1}} </td>
+            <td href="#" [routerLink]="['/chitietduan', da.id]" style="text-decoration: none;">
+                {{da.tenDuAn}}
+              </td>
+            <td> {{da.ngayStart | date:'dd/MM/Y' }} </td>
+            <td> {{da.tien.toLocaleString('vi-VN')+ " VNĐ"}} </td>
+            <td>{{da.leader}}</td>
+            <td style="padding: 10px 40px;" >
+              <a href=""  (click)="xoaDuAn(da.id)" style="text-decoration: none; color: red;" ><i>Xóa</i></a>
+              <br>
+              <a href=""[routerLink]="['/duansua', da.id]" style="text-decoration: none; color: red;" ><i>Sửa</i></a>
+             </td>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div style="color: #ddd; text-align: center;"> Có <b style="font-size: 20px;">{{listDuAn.length}}</b> dự án trong danh
+    sách</div>

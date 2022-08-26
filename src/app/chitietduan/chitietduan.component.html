@@ -1,0 +1,12 @@
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <div class="card-body" >
+          <p class="card-text">ID : {{da.id}}</p>
+          <h5 class="card-title"> Tên dự án : {{da.tenDuAn| uppercase}}</h5>
+          <p class="card-text">Ngày bắt đầu :{{da.ngayStart|date:'dd/MM/Y'}}</p>
+          <p class="card-text" st><small class="text-muted" >Giá : {{da.tien.toLocaleString('vi-VN')+ " VNĐ"}} </small></p>
+        </div>
+      </div>
+    </div>
+  </div>

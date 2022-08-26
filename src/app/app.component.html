@@ -1,0 +1,70 @@
+<div id="mySidenav" class="sidenav">
+  <p class="logo"><span>QC</span>-Project</p>
+ 
+  <!-- <form class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form> -->
+  <a href="#" routerLink="/" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
+  <a href="#" routerLink="/duanlist" class="icon-a"><i class='bx bxs-shopping-bag'></i> &nbsp;&nbsp;Danh sách dự án</a>
+  <a href="#" routerLink="/tasklist" class="icon-a"><i class="fa fa-list-alt icons"></i> &nbsp;&nbsp;Danh sách task</a>
+  <a routerLink="/nvlist" class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Danh sách nhân viên</a>
+  <a routerLink="/dangnhap" class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Đăng Nhập</a>
+  <a routerLink="/dangky" class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Đăng Ký</a>
+</div>
+<div id="main">
+  <div class="head">
+    <div class="col-div-6">
+      <span style="font-size:30px;cursor:pointer; color: white;" class="nav">&#9776; Dashboard</span>
+      <span style="font-size:30px;cursor:pointer; color: white;" class="nav2">&#9776; Dashboard</span>
+    </div>
+    <div class="col-div-6">
+      <div class="profile">
+        <img
+          src="data:image/jpeg;base64,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"
+          class="pro-img" />
+         
+          <p >Tình trạng đăng nhập: {{ daDangNhap()== true ?'Đã đăng nhập' : 'Chưa đăng nhập' }}</p>
+          <a href="" style="color: red;" (click)="thoat()">Đăng xuất</a>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="clearfix"></div>
+  <br />
+  <div class="col-div-3">
+    <div class="box">
+      <p>{{listNhanVien.length}}<br /><span>Nhân viên</span></p>
+      <i class="fa fa-users box-icon"></i>
+    </div>
+  </div>
+  <div class="col-div-3">
+    <div class="box">
+      <p>{{listDuAn.length}}<br /><span>Dự án</span></p>
+      <i class="fa fa-list box-icon"></i>
+    </div>
+  </div>
+  <div class="col-div-3">
+    <div class="box">
+      <p>{{listTask.length}}<br /><span>Task</span></p>
+      <i class="fa fa-shopping-bag box-icon"></i>
+    </div>
+  </div>
+  <div class="col-div-3">
+    <div class="box">
+      <p>{{totalPrice}}<br /><span>Doanh Thu</span></p>
+      <i class="fa fa-tasks box-icon"></i>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="col-div-8">
+    <div class="box-8">
+      <div class="content-box">
+        <table>
+          <tbody>
+            <router-outlet></router-outlet>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

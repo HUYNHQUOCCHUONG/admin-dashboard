@@ -1,0 +1,19 @@
+<form class="mt-3" #frmSuaNV="ngForm" (ngSubmit)="nvSua(frmSuaNV.value)">
+    <h5 class="bg-warning p-2" style="text-align: center;">SỬA NHÂN VIÊN</h5>
+    <p class="mb-3" style="color: yellow;">ID <input class="form-control" name="id" [(ngModel)]="sp.id" readonly></p>
+    <p class="mb-3 " style="color: yellow;">Họ tên<input class="form-control" name="tenNV" [(ngModel)]="sp.tenNV"></p>
+    <p class="mb-3" style="color: yellow;">Ngày sinh<input class="form-control" type="date" name="ngayNV" [(ngModel)]="sp.ngayNV"></p>
+    <p class="mb-3" style="color: yellow;">Giới tính
+        <select class="form-control" name="phai" [(ngModel)]="sp.phai">
+            <option value="1">Nam</option>
+            <option value="2">Nữ</option>
+        </select>
+    </p>
+    <p class="mb-3" style="color: yellow;">Khu vực
+        <select class="form-control" name="khuvuc" [(ngModel)]="sp.khuvuc">
+            <option value="1">Bắc</option>
+            <option value="2">Trung</option>
+            <option value="3">Nam</option>
+        </select>
+    <p><button type="submit" class="btn btn-primary p-2">Cập Nhật</button></p>
+</form>

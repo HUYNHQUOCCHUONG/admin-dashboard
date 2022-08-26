@@ -1,0 +1,24 @@
+<form  #dangky1="ngForm" (ngSubmit)="dangky(dangky1.value)" >
+    <div class="container" >
+      <p>Xin hãy nhập biểu mẫu bên dưới để đăng ký.</p>
+      <hr>
+     <label for="username" ><b>UserName</b></label>
+      <input type="text" [(ngModel)]="username" required minlength="6" name="username" #loiun="ngModel">
+      <em *ngIf="loiun.invalid" class="text-danger">
+        Nhập tên  chưa đủ kí tự hoặc chưa nhập .
+    </em> <br>
+     <label for="psw"><b>Mật Khẩu</b></label>
+      <input type="password"  [(ngModel)]="password" required minlength="6" name="password" #loipw="ngModel">
+      <em *ngIf="loipw.invalid" class="text-danger">
+        Nhập mật khẩu chưa đủ độ dài hoặc chưa nhập .
+    </em> <br>
+     <label for="psw-repeat"><b>Nhập Lại Mật Khẩu</b></label>
+     <input type="password"  [(ngModel)]="password" required minlength="6" name="password" #loipw="ngModel">
+      <em *ngIf="loipw.invalid" class="text-danger">
+        Nhập mật khẩu chưa đủ độ dài hoặc chưa nhập .
+    </em> <br>
+     <div class="clearfix">
+        <button type="submit" class="signupbtn">Đăng ký</button>
+      </div>
+    </div>
+  </form>

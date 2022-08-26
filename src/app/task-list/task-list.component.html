@@ -1,0 +1,47 @@
+<div class="col-div-8">
+    <div class="box-8">
+      <div class="content-box">
+        <p>Danh sách task<span><a style="border-radius: 6px;
+            box-sizing: border-box;
+            color:  linear-gradient(135deg, #008aff, #86d472);;
+            display: block;
+            font-size: 1.4em;
+            font-weight: 600;
+            padding: 4px;
+            position: relative;
+            text-decoration: none;
+            z-index: 2;" routerLink="/taskthem">Nhập thêm</a></span></p>
+            <!-- <form class="d-flex" role="search" style="width:50%">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="tk" [(ngModel)]="tukhoa" (keyup)="locTASK()" >
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+        <br />
+        <table *ngFor="let task of listTask ; let i= index">
+          <thead>
+            <div style="color: #ddd;" > 
+              {{task.id}} 
+                <b>. {{task.tenTask}} </b><br>
+                {{task.moTa}} 
+            </div>
+            <div class="mb-3 border-bottom row" style="color: #ddd;">
+                <div class="col-6">
+                Priority: {{task.priority}}<br>
+                Status: {{task.status}}
+                </div>
+                <div class="col-6">
+                Nhân viên :  {{task.nhanvienID}} <br>
+                Dự án: {{task.duAnID}}
+                </div>   
+                <td>
+                  <a href=""  (click)="xoaTask(task.id)" style="text-decoration: none; color: red;" ><i>Xóa</i></a>
+                  <br>
+                  <a href="" [routerLink]="['/tasksua', task.id]" style="text-decoration: none; color: red;" ><i>Sửa</i></a>
+                 </td>
+            </div>
+          </thead>
+         
+        </table>
+      </div>
+    </div>
+  </div>
+  <div style="color: #ddd; text-align: center;" > Có <b style="font-size: 20px;">{{listTask.length}}</b> task trong danh sách</div>

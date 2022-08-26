@@ -1,0 +1,29 @@
+<form class="mt-3" #TaskSua="ngForm" (ngSubmit)="taskSua(TaskSua.value)">
+    <h5 class="bg-warning p-2" style="text-align: center;">SỬA TASK</h5>
+    <p class="mb-3" style="color: yellow;">ID <input class="form-control" [(ngModel)]="sp.id" name="id"></p>
+    <p class="mb-3" style="color: yellow;">Tên task <input class="form-control" [(ngModel)]="sp.tenTask" name="tenTask"></p>
+    <p class="mb-3" style="color: yellow;">Mô tả <textarea class="form-control" [(ngModel)]="sp.moTa" name="moTa"></textarea></p>
+    <p class="mb-3" style="color: yellow;">Dự án <select class="form-control" [(ngModel)]="sp.duAnID" name="duAnID">
+            <option value="">Chọn Dự Án</option>
+            <option value="{{da.id}}" *ngFor="let da of listDuAn">{{da.tenDuAn}}</option>
+        </select>
+    </p>
+    <!-- <p class="mb-3" style="color: yellow;">Người thực hiện <select class="form-control" [(ngModel)]="sp.nhanvienID" name="nhanvienID">
+            <option value="">Chọn nhân viên</option>
+            <option value="{{nv.tennhanvien}}" *ngFor="let nv of listNhanVien"> {{nv.tenNV}}</option>
+        </select>
+    </p> -->
+    <p class="mb-3" style="color: yellow;">Độ ưu tiên <select class="form-control" [(ngModel)]="sp.priority"
+            name="priority">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+    </p>
+    <p class="mb-3" style="color: yellow;">Trạng thái <select class="form-control" [(ngModel)]="sp.status"
+            name="status">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+    </p>
+    <p><button type="submit" class="btn btn-primary p-2"> Cập Nhật</button></p>
+</form>

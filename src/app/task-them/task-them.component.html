@@ -1,0 +1,46 @@
+<form class="mt-3" #taskthem="ngForm" (ngSubmit)="themTask(taskthem.value)">
+    <h5 class="bg-warning p-2" style="text-align: center;">THÊM TASK</h5>
+    <p class="mb-3" style="color: yellow;">Tên task <input class="form-control" [(ngModel)]="tenTask" required minlength="6" name="tenTask"
+            #loitask="ngModel"></p>
+    <em *ngIf="loitask.invalid" class="text-danger">
+        Nhập tên task chưa đúng hoặc chưa nhập .
+    </em>
+    <p class="mb-3" style="color: yellow;">Mô tả <textarea class="form-control" [(ngModel)]="moTa" required minlength="6" name="moTa"
+            #loimota="ngModel"></textarea></p>
+    <em *ngIf="loimota.invalid" class="text-danger">
+        Nhập mô tả chưa đúng hoặc chưa nhập .
+    </em>
+    <p class="mb-3" style="color: yellow;">Dự án <select class="form-control" [(ngModel)]="duAnID" required minlength="1" name="duAnID" #loiduan="ngModel">
+            <option value="">Chọn Dự Án</option>
+            <option value="{{da.id}}" *ngFor="let da of listDuAn">{{da.tenDuAn}}</option>
+        </select>
+    </p>
+    <em *ngIf="loiduan.invalid" class="text-danger">
+        Chưa chọn dự án .
+    </em>
+    <p class="mb-3" style="color: yellow;">Người thực hiện <select class="form-control" [(ngModel)]="nhanvienID" required minlength="1" name="nhanvienID" #loinv="ngModel">
+            <option value="">Chọn nhân viên</option>
+            <option value="{{nv.id}}" *ngFor="let nv of listNhanVien">{{nv.ho}} {{nv.ten}}</option>
+        </select>
+    </p>
+    <em *ngIf="loinv.invalid" class="text-danger">
+        Chưa chọn người thực hiện .
+    </em>
+    <p class="mb-3" style="color: yellow;">Độ ưu tiên <select class="form-control" [(ngModel)]="priority" required minlength="1" name="priority" #loiuutien="ngModel">
+            <option value="1">1</option>
+            <option value="1">2</option>
+        </select>
+    </p>
+    <em *ngIf="loiuutien.invalid" class="text-danger">
+        Chưa chọn ưu tiên.
+    </em>
+    <p class="mb-3" style="color: yellow;">Trạng thái <select class="form-control" [(ngModel)]="status" required minlength="1" name="status" #loistatus="ngModel">
+            <option value="1">1</option>
+            <option value="1">2</option>
+        </select>
+    </p>
+    <em *ngIf="loistatus.invalid" class="text-danger">
+        Chưa chọn trạng thái.
+    </em>
+    <p><button type="submit" class="btn btn-primary p-2">Thêm Task</button></p>
+</form>
